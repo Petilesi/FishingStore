@@ -1,0 +1,29 @@
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page" (onCloseSidenav)="onClose($event, sidenav)" ></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <div fxHide.gt-xs>
+                <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+                    <mat-icon>
+                        menu
+                    </mat-icon>
+                </button>
+            </div>
+            <div>
+                FishingStore
+            </div>
+            <div fxFlex fxLayout fxLayoutAlign="center" fxHide.xs>
+                <ul fxLayout fxLayoutGap="20px" class="menuBar">
+                    <li><a routerLink="/main">Főoldal</a></li>
+                    <li><a routerLink="/login">Bejelentkezés</a></li>
+                    <li><a routerLink="/register">Regisztráció</a></li>
+                    <li><a routerLink="/contact">Elérhetőségeink</a></li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
