@@ -1,7 +1,7 @@
 
 <mat-sidenav-container>
     <mat-sidenav #sidenav>
-        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page" (onCloseSidenav)="onClose($event, sidenav)" ></app-menu>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page" (onCloseSidenav)="onClose($event, sidenav)" [loggedInUser]="loggedInUser" (onLogout)="logout($event)"></app-menu>
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar>
@@ -18,7 +18,8 @@
             <div fxFlex fxLayout fxLayoutAlign="center" fxHide.xs>
                 <ul fxLayout fxLayoutGap="20px" class="menuBar">
                     <li><a routerLink="/main">Főoldal</a></li>
-                    <li><a routerLink="/login">Bejelentkezés</a></li>
+                    <li *ngIf="!(loggedInUser)"><a routerLink="/login">Bejelentkezés</a></li>
+                    <li *ngIf="(loggedInUser)"><a routerLink="/login" (click)="logout()">Kijelentkezés</a></li>
                     <li><a routerLink="/register">Regisztráció</a></li>
                     <li><a routerLink="/contact">Elérhetőségeink</a></li>
                 </ul>

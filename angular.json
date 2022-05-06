@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "FishingStore:build:production",
+            "firebaseProject": "fishingstore-40ec2",
+            "firebaseHostingSite": "fishingstoreproject"
+          }
         }
       }
     }

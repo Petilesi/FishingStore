@@ -3,13 +3,17 @@
         <mat-icon>main</mat-icon>
         <span>Főoldal</span>
     </a>
-    <a mat-list-item routerLink="/login" (click)="close()">
+    <a mat-list-item routerLink="/login" (click)="close()" *ngIf="!loggedInUser">
         <mat-icon>login</mat-icon>
-        <span>Főoldal</span>
+        <span>Bejelentkezés</span>
+    </a>
+    <a mat-list-item routerLink="/login" (click)="close(true)" *ngIf="loggedInUser">
+        <mat-icon>logout</mat-icon>
+        <span>Kijelentkezés</span>
     </a>
     <a mat-list-item routerLink="/register" (click)="close()">
         <mat-icon>app_registration</mat-icon>
-        <span>Főoldal</span>
+        <span>Regisztráció</span>
     </a>
     <a mat-list-item routerLink="/contact" (click)="close()">
         <mat-icon>contact</mat-icon>

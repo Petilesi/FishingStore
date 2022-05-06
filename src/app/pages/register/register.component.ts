@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -20,19 +21,26 @@ export class RegisterComponent implements OnInit {
     address: new FormControl('')
   });
 
-  constructor(private location: Location) {
+  constructor(private location: Location, private authService: AuthService) {
 
   }
 
   ngOnInit(): void {
+    this.registerForm.valueChanges.subscribe(console.log);
   }
 
   onSubmit() {
     console.log(this.registerForm.value);
+    this.authService.register(this.registerForm.get('email')?.value, this.registerForm.get('password')?.value).then(cred => {
+        console.log(cred);
+    }).catch(error =>{
+      console.log(error);
+    });
   }
 
   onCancel() {
     this.location.back();
   }
+
 
 }

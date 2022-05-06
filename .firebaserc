@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fishingstore-40ec2": {
+      "hosting": {
+        "FishingStore": [
+          "fishingstoreproject"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fishingstore-40ec2"
+  }
+}
