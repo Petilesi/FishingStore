@@ -2,5 +2,12 @@ div{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 100%;
+    
+}
+
+#listing{
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
 }

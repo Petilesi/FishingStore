@@ -1,3 +1,30 @@
-<div>
-    <h1>Üdvözlünk webshopunkban!</h1>
+<div *ngFor="let product of productObject | async">
+    <mat-card id="listing">
+        <mat-card-content>
+            <img mat-card-image [src]="product.pictureSource">
+        </mat-card-content>
+        <mat-card-title>
+            {{product.name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{product.description}}
+        </mat-card-subtitle>
+        <mat-card-footer>
+            {{product.price}} Ft
+        </mat-card-footer>
+        <mat-card-actions>
+            <span>
+                <button mat-icon-button>
+                    <mat-icon>
+                        shopping_cart
+                    </mat-icon>
+                </button>
+            </span>
+            <span>
+                <button mat-icon-button>
+                    <mat-icon>share</mat-icon>
+                </button>
+            </span>
+        </mat-card-actions>
+    </mat-card>
 </div>

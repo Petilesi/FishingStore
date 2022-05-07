@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { product } from '../models/product';
@@ -14,10 +13,10 @@ export class ProductsService {
   
   collectionName = 'Products';
 
-  constructor(private http: HttpClient, private afs: AngularFirestore,private storage: AngularFireStorage) { }
+  constructor(private afs: AngularFirestore,private storage: AngularFireStorage) { }
 
 
-  loadImageMeta(metaUrl: string): Observable<Array<product>> {
+  getProducts(): Observable<Array<product>> {
   
     return this.afs.collection<product>(this.collectionName).valueChanges();
   }
