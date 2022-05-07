@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { product } from 'src/app/shared/models/product';
+import { ProductsService } from 'src/app/shared/services/products.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  productObject?: Array<product>;
+  chosenProduct?: product;
+
+  constructor(/*private productService: ProductsService */) { }
 
   ngOnInit(): void {
+    /* this.productService.loadImageMeta('_credits.json').subscribe((data: Array<product>) => {
+       this.productObject = data;
+     })
+   }
+ 
+   loadProduct(productObject: product){
+     this.chosenProduct = productObject;
+   }
+   */
   }
-
 }

@@ -1,24 +1,41 @@
-<h1 id="welcome">Regisztráció</h1>
-<div id="register">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <mat-form-field>
-            <mat-label for="email">Email</mat-label><input type="text" formControlName="email" />
-            <mat-label for="password">Jelszó</mat-label><input type="password" formControlName="password" />
-            <mat-label for="passwordAgain">Jelszó megerősítése</mat-label><input type="password" formControlName="passwordAgain" />
-        </mat-form-field>
-        <mat-form-field formGroupName="name">
+<div class="main_component">
+    <div class="div-flex">
+        <h1>Register an account!</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <mat-form-field>
-                <mat-label for="firstName">Vezetéknév</mat-label><input type="text" formControlName="firstName" />
-                <mat-label for="lastName">Keresztnév</mat-label><input type="text" formControlName="lastName" />
+                <mat-label for="email">Email: </mat-label>
+                <input matInput type="text" formControlName="email" />
             </mat-form-field>
-        </mat-form-field>
-        <mat-form-field>
-            <label for="address">Lakcím</label><input type="text" formControlName="address" />
-        </mat-form-field>
-        <div id="registerButton">
-            <button type="submit">Regisztráció</button>
-            <button (click)="onCancel()">Mégse</button>
-        </div>
-
-    </form>
+            <mat-form-field>
+                <mat-label for="password">Jelszó: </mat-label>
+                <input matInput type="password" formControlName="password" />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label for="passwordAgain">Jelszó megerősítése: </mat-label>
+                <input matInput type="password" formControlName="passwordAgain" />
+            </mat-form-field>
+            <div formGroupName="name" class="subForm">
+                <mat-form-field>
+                    <mat-label for="firstName">Vezetéknév: </mat-label>
+                    <input matInput type="text" formControlName="firstName" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label for="lastName">Keresztnév: </mat-label>
+                    <input matInput type="text" formControlName="lastName" />
+                </mat-form-field>
+            </div>
+            <mat-form-field>
+                <mat-label for="address">Lakcím: </mat-label>
+                <input matInput type="text" formControlName="address" />
+            </mat-form-field>
+            <div id="buttons">
+                <span>
+                    <button mat-flat-button type="submit">Regisztráció</button>
+                </span>
+                <span>
+                    <button mat-flat-button (click)="onCancel()">Mégse</button>
+                </span>
+            </div>
+        </form>
+    </div>
 </div>

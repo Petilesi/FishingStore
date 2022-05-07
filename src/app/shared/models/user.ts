@@ -1,7 +1,6 @@
-export interface user{
+export interface User{
     id: string;
     email: string;
-    passwordAgain: string;
     name: {
         firstName: string;
         lastName: string;
