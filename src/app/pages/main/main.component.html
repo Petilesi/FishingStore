@@ -1,7 +1,7 @@
 <div *ngFor="let product of productObject | async">
     <mat-card id="listing">
         <mat-card-content>
-            <img mat-card-image [src]="product.pictureSource">
+            <img mat-card-image [src]="product.pictureSource" id="productImg">
         </mat-card-content>
         <mat-card-title>
             {{product.name}}

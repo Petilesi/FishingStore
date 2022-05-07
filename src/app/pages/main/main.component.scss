@@ -1,13 +1,17 @@
 div{
-    flex-direction: column;
     justify-content: center;
     text-align: center;
-    
+    display: inline-block;
 }
 
 #listing{
-    width: fit-content;
+    width: min-content;
     justify-content: center;
     text-align: center;
-    flex-direction: row;
+    margin: 20px;
+}
+
+#productImg{
+    width: 260px;
+    height: 180px;
 }
