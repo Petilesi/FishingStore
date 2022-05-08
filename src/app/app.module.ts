@@ -23,6 +23,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CartComponent } from './pages/cart/cart.component';
+import { AccountModifyComponent } from './pages/account-modify/account-modify.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CartComponent } from './pages/cart/cart.component';
     // LoginComponent,
     MenuComponent,
     CartComponent,
+
   ],
   imports: [
     BrowserModule,

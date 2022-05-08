@@ -20,7 +20,6 @@ export class ProductsService {
 
 
   getProducts(): Observable<Array<product>> {
-
     return this.afs.collection<product>(this.collectionName).valueChanges();
   }
 

@@ -38,6 +38,12 @@ const routes: Routes = [
   },
 
   {
+    path: 'account-modify',
+    loadChildren: () => import('./pages/account-modify/account-modify.module').then(m => m.AccountModifyModule),
+    canActivate: [AuthGuardGuard]
+  },
+
+  {
     path: '',
     redirectTo: '/main',
     pathMatch: 'full'

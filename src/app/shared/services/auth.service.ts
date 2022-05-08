@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { getAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ export class AuthService {
 
   public loggedIn: boolean | null;
 
-  constructor(private auth: AngularFireAuth,) { this.loggedIn = false }
+  constructor(private auth: AngularFireAuth,private afs: AngularFirestore) { this.loggedIn = false }
 
   login(email: string, password: string) {
     return this.auth.signInWithEmailAndPassword(email, password).then((cred) => {
@@ -56,6 +57,10 @@ export class AuthService {
       console.log(error);
     });
     return null;
+  }
+
+  modifyUser(userData: any){
+    return this.afs.collection('Users').doc(this.giveUid()).update(userData);
   }
 
 }
