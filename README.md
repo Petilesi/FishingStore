@@ -25,14 +25,14 @@ test2@gmail.com | testpw
 - 2 route AuthGuardolva ✓
 
 ### Felhasznált materialok:
--MatCardModule
--MatIconModule
--MatDividerModule
--MatListModule
--MatFormFieldModule
--MatInputModule
--MatButtonModule
--MatProgressSpinnerModule
--MatSidenavModule
--MatToolbarModule
--MatToolTipModu
+- MatCardModule
+- MatIconModule
+- MatDividerModule
+- MatListModule
+- MatFormFieldModule
+- MatInputModule
+- MatButtonModule
+- MatProgressSpinnerModule
+- MatSidenavModule
+- MatToolbarModule
+- MatToolTipModu
