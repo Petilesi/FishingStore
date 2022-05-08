@@ -23,3 +23,16 @@ test2@gmail.com | testpw
 - firestore komplex lekérdezés ✓ (1db)
 - 4 különböző route ✓
 - 2 route AuthGuardolva ✓
+
+### Felhasznált materialok:
+-MatCardModule
+-MatIconModule
+-MatDividerModule
+-MatListModule
+-MatFormFieldModule
+-MatInputModule
+-MatButtonModule
+-MatProgressSpinnerModule
+-MatSidenavModule
+-MatToolbarModule
+-MatToolTipModu
