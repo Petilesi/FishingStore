@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { FrontendLoadingService } from 'src/app/shared/services/frontend-loading.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -54,6 +55,7 @@ export class LoginComponent implements OnInit {
       }).catch(error => {
         console.error(error);
         this.loading = false;
+        Swal.fire('FishingStore', 'Sikertelen bejelentkezés' ,'error');
       });
   }
 }

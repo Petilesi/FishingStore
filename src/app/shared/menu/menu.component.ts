@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
