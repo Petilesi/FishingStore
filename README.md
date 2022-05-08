@@ -4,6 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Javításhoz
 
+belépéshez:
+test2@gmail.com | testpw
+
 - fordítási hiba nincs ✓
 - futtatási hiba nincs ✓
 - firebase hosting url ✓
