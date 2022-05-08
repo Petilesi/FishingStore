@@ -36,3 +36,5 @@ test2@gmail.com | testpw
 - MatSidenavModule
 - MatToolbarModule
 - MatToolTipModu
+
+#### Ha valami komoly probléma lenne, akkor keress meg coospacen (SLV6ZW)
