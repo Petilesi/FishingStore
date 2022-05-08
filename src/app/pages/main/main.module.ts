@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FlexModule } from '@angular/flex-layout';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -25,6 +26,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FlexLayoutModule,
     FlexModule,
     SweetAlert2Module,
+    MatTooltipModule
     
   ]
 })

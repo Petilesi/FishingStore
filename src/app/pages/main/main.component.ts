@@ -9,8 +9,18 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
 import { Clipboard } from '@angular/cdk/clipboard';
 import Swal from 'sweetalert2';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
+  animations: [
+    trigger('onEnter', [
+      transition(':enter', [
+        style({opacity:0}),
+        animate('2s ease-in-out'),
+        style({opacity:1}),
+      ])
+    ])
+  ],
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
@@ -36,6 +46,15 @@ export class MainComponent implements OnInit {
 
   added(){
     Swal.fire('Kosár', 'Tárgy sikeresen kosárba helyezve', 'success');
+  }
+
+  getCheap(){
+    console.log('bekerult a fuggvenybe');
+    this.productObject = this.productService.getProductByPrice();
+  }
+
+  deleteFilter(){
+    this.productObject = this.productService.getProducts();
   }
 
 }

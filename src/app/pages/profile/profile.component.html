@@ -10,12 +10,12 @@
         <mat-card-actions>
             <span>
                 <button mat-icon-button (click)="authService.deleteUser()">
-                    <mat-icon routerLink="/main">delete</mat-icon>
+                    <mat-icon routerLink="/main" [ngStyle]="{'color':'#d90026'}">delete</mat-icon>
                 </button>
             </span>
             <span>
                 <button mat-icon-button>
-                    <mat-icon>remove_shopping_cart</mat-icon>
+                    <mat-icon  [ngStyle]="{'color':'#d90026'}">remove_shopping_cart</mat-icon>
                 </button>
             </span>
         </mat-card-actions>

@@ -1,4 +1,17 @@
 <h1 id="info">Termékeink</h1>
+<p *ngIf="!authService.loggedIn" id="welcomeGuest" [@onEnter]>Üdvözlünk webshopunkban! Ha rendelni szeretnél kérlek jelentkezz be vagy regisztálj!</p>
+<span>
+    <button mat-icon-button (click)="getCheap()" matTooltip="15000 Ft alatti termékek listázása">
+        <mat-icon>
+            money
+        </mat-icon>
+    </button>
+    <button mat-icon-button (click)="deleteFilter()" matTooltip="Szűrő kikapcsolása">
+        <mat-icon>
+            remove_circle
+        </mat-icon>
+    </button>
+</span>
 <div>
     <div *ngFor="let product of productObject | async">
         <mat-card id="listing">
@@ -16,14 +29,14 @@
             </mat-card-footer>
             <mat-card-actions>
                 <span>
-                    <button mat-icon-button *ngIf="authService.loggedIn" (click)="added()">
-                        <mat-icon>
+                    <button mat-icon-button *ngIf="authService.loggedIn" (click)="added()" matTooltip="Hozzáadás a kosárhoz">
+                        <mat-icon [ngStyle]="{'color':'green'}">
                             add_shopping_cart
                         </mat-icon>
                     </button>
                 </span>
                 <span>
-                    <button mat-icon-button (click)="sharePage()">
+                    <button mat-icon-button (click)="sharePage()" matTooltip="Megosztás">
                         <mat-icon>share</mat-icon>
                     </button>
                 </span>

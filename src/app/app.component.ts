@@ -1,10 +1,21 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { AuthService } from './shared/services/auth.service';
 
+
 @Component({
+  animations: [
+    trigger('onEnter', [
+      transition(':enter', [
+        style({opacity:0}),
+        animate('2s ease-in-out'),
+        style({opacity:1}),
+      ])
+    ])
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -47,6 +58,8 @@ export class AppComponent implements OnInit {
     this.elementRef.nativeElement.ownerDocument
       .body.style.backgroundColor = '#303030';
   }
+
+  
 
   logout(_?: boolean){
     this.authService.logout().then(() => {
