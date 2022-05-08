@@ -1,0 +1,23 @@
+<div>
+    <mat-card id="profile">
+        <mat-card-header>
+            <mat-card-title>Profilom</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Felhasználónév: {{authService.giveEmail()}}</p>
+            <p>Azonosító: {{authService.giveUid()}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <span>
+                <button mat-icon-button (click)="authService.deleteUser()">
+                    <mat-icon routerLink="/main">delete</mat-icon>
+                </button>
+            </span>
+            <span>
+                <button mat-icon-button>
+                    <mat-icon>remove_shopping_cart</mat-icon>
+                </button>
+            </span>
+        </mat-card-actions>
+    </mat-card>
+</div>

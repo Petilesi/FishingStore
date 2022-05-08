@@ -5,6 +5,11 @@ import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexModule } from '@angular/flex-layout';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
+
 
 
 @NgModule({
@@ -16,7 +21,11 @@ import {MatIconModule} from '@angular/material/icon';
     MainRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    FlexLayoutModule,
+    FlexModule,
+    SweetAlert2Module,
+    
   ]
 })
 export class MainModule { }

@@ -26,6 +26,20 @@
                         <li><a routerLink="/contact">Elérhetőségeink</a></li>
                     </ul>
                 </div>
+                <div>
+                    <button mat-icon-button routerLink="/cart" *ngIf="authService.loggedIn">
+                        <mat-icon>
+                            shopping_cart
+                        </mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <button mat-icon-button routerLink="/profile" *ngIf="authService.loggedIn">
+                        <mat-icon>
+                            account_circle
+                        </mat-icon>
+                    </button>
+                </div>
             </mat-toolbar>
             <router-outlet></router-outlet>
         </mat-sidenav-content>

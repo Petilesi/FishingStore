@@ -1,7 +1,12 @@
+#info{
+    text-align: center;
+}
+
 div{
     justify-content: center;
     text-align: center;
     display: inline-block;
+    margin: auto;
 }
 
 #listing{
@@ -14,4 +19,8 @@ div{
 #productImg{
     width: 260px;
     height: 180px;
+}
+
+.scalable{
+    height: 60px;
 }

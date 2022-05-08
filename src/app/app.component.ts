@@ -14,8 +14,7 @@ export class AppComponent implements OnInit {
   page = 'login';
   loggedInUser?: firebase.default.User | null;
 
-  constructor(private router: Router, private elementRef: ElementRef, private authService: AuthService) {
-
+  constructor(private router: Router, private elementRef: ElementRef, public authService: AuthService,) {
   }
 
   ngOnInit() {
@@ -56,5 +55,4 @@ export class AppComponent implements OnInit {
       console.error(error);
     });
   }
-
 }

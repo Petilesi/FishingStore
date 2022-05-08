@@ -1,30 +1,33 @@
-<div *ngFor="let product of productObject | async">
-    <mat-card id="listing">
-        <mat-card-content>
-            <img mat-card-image [src]="product.pictureSource" id="productImg">
-        </mat-card-content>
-        <mat-card-title>
-            {{product.name}}
-        </mat-card-title>
-        <mat-card-subtitle>
-            {{product.description}}
-        </mat-card-subtitle>
-        <mat-card-footer>
-            {{product.price}} Ft
-        </mat-card-footer>
-        <mat-card-actions>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>
-                        shopping_cart
-                    </mat-icon>
-                </button>
-            </span>
-            <span>
-                <button mat-icon-button>
-                    <mat-icon>share</mat-icon>
-                </button>
-            </span>
-        </mat-card-actions>
-    </mat-card>
+<h1 id="info">Termékeink</h1>
+<div>
+    <div *ngFor="let product of productObject | async">
+        <mat-card id="listing">
+            <mat-card-content>
+                <img mat-card-image [src]="product.pictureSource" id="productImg">
+            </mat-card-content>
+            <mat-card-title class="scalable">
+                {{product.name}}
+            </mat-card-title>
+            <mat-card-subtitle class="scalable">
+                {{product.description}}
+            </mat-card-subtitle>
+            <mat-card-footer>
+                {{product.price}} Ft
+            </mat-card-footer>
+            <mat-card-actions>
+                <span>
+                    <button mat-icon-button *ngIf="authService.loggedIn" (click)="added()">
+                        <mat-icon>
+                            add_shopping_cart
+                        </mat-icon>
+                    </button>
+                </span>
+                <span>
+                    <button mat-icon-button (click)="sharePage()">
+                        <mat-icon>share</mat-icon>
+                    </button>
+                </span>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>

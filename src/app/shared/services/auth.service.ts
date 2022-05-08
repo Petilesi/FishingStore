@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { getAuth } from '@angular/fire/auth';
 
 
 @Injectable({
@@ -7,22 +8,54 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
 
-  constructor(private auth: AngularFireAuth) { }
+  public loggedIn: boolean | null;
+
+  constructor(private auth: AngularFireAuth,) { this.loggedIn = false }
 
   login(email: string, password: string) {
-   return  this.auth.signInWithEmailAndPassword(email, password);
+    return this.auth.signInWithEmailAndPassword(email, password).then((cred) => {
+      localStorage.setItem("uid",cred.user?.uid!);
+      this.loggedIn = true;
+    });
   }
 
-  register(email: string,password: string){
-    return this.auth.createUserWithEmailAndPassword(email,password);
+  register(email: string, password: string) {
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  isUserLoggedIn(){
+  isUserLoggedIn() {
     return this.auth.user;
   }
 
-  logout(){
-   return this.auth.signOut();
+  logout() {
+    return this.auth.signOut().then(() => {
+      localStorage.clear();
+      this.loggedIn = false;
+    });
+  }
+
+  giveEmail() {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const email = user?.email;
+    return email;
+  }
+
+  giveUid(){
+    const auth = getAuth();
+    const user = auth.currentUser;
+    return user?.uid;
+  }
+
+  deleteUser(){
+    const auth = getAuth();
+    const user = auth.currentUser;
+    user?.delete().then(() =>{
+      console.log("Account delete successfull");
+    }).catch((error) =>{
+      console.log(error);
+    });
+    return null;
   }
 
 }

@@ -22,6 +22,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CartComponent } from './pages/cart/cart.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
     // MainComponent,
     // LoginComponent,
     MenuComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

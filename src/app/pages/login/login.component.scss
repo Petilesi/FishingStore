@@ -1,7 +1,4 @@
-#login {
-    text-align: center;
-    justify-content: center;
-}
+
 
 #loginButton {
     text-align: center;
@@ -12,4 +9,18 @@
     text-align: center;
 }
 
+.buttons{
+    margin: 3px;
+}
 
+.forms{
+    margin: 3px;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
