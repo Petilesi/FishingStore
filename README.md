@@ -18,7 +18,7 @@ test2@gmail.com | testpw
 - 10db material elem ✓
 - angular formok ✓
 - crud ✓
-- crud servicekbe ✓
+- crud servicekbe (user) ✓
 - firestore ✓
 - firestore komplex lekérdezés ✓ (1db)
 - 4 különböző route ✓
